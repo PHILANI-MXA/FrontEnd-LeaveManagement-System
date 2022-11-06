@@ -1,6 +1,5 @@
 <template>
   <NavComponentVue/>
-  <leaveform/>
 </template>
 
 <script>
@@ -9,7 +8,6 @@ export default {
     name: '',
     components: {
       NavComponentVue,
-
     }
 }
 

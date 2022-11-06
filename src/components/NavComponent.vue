@@ -11,15 +11,15 @@
             <li class="nav-item text-white">
              <router-link class="text-decoration-none text-white" to="/">Employees</router-link>
             </li>
-             <li class="nav-item text-decoration-none">
-               <router-link class="text-decoration-none text-white" to="/applyForLeave">ApplyForLeave</router-link>
-            </li>
-               <li class="nav-item">
-                <router-link class="text-decoration-none text-white" to="/viewLeaves">ViewLeaves</router-link>
-            </li>
-            <li class="nav-item">
-                <router-link class="text-decoration-none text-white" to="/registerEmployee">RegisterEmployee</router-link>
-            </li>
+            <li class="nav-item text-white">
+              <router-link class="text-decoration-none text-white" to="/applyForLeave">applyForLeave</router-link>
+             </li>
+             <li class="nav-item text-white">
+              <router-link class="text-decoration-none text-white" to="/showLeaves">showLeaves</router-link>
+             </li>
+             <li class="nav-item text-white">
+              <router-link class="text-decoration-none text-white" to="/registerNewEmployee">registerNewEmployee</router-link>
+             </li>
           </ul>
         </div>
       </div>
