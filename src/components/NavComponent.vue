@@ -9,19 +9,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item text-white">
-             <router-link class="text-decoration-none text-white" to="/">Home</router-link>
+             <router-link class="text-decoration-none text-white" to="/">Employees</router-link>
             </li>
              <li class="nav-item text-decoration-none">
-               <router-link class="text-decoration-none text-white" to="/about">About</router-link>
+               <router-link class="text-decoration-none text-white" to="/applyForLeave">ApplyForLeave</router-link>
             </li>
                <li class="nav-item">
-                <router-link class="text-decoration-none text-white" to="/books">Books</router-link>
+                <router-link class="text-decoration-none text-white" to="/viewLeaves">ViewLeaves</router-link>
             </li>
             <li class="nav-item">
-                <router-link class="text-decoration-none text-white" to="/signup">Register</router-link>
-            </li>
-            <li class="nav-item">
-                 <router-link class="text-decoration-none text-white" to="/login">Login</router-link>
+                <router-link class="text-decoration-none text-white" to="/registerEmployee">RegisterEmployee</router-link>
             </li>
           </ul>
         </div>

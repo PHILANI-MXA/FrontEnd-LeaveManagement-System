@@ -1,7 +1,4 @@
 <template>
-    <!-- <div id="form" class="">
-         <SignUpComp />
-    </div> -->
      <div id="login" class="container min-vh-100">
  <h2 class="fw-bold p-2">Register</h2>
  <div class="col-md-6 m-auto">
@@ -40,8 +37,7 @@
  </template>
  
  <script>
- 
- // import SignUpComp from '@/components/signUpComp.vue';
+
  
  export default {
  
