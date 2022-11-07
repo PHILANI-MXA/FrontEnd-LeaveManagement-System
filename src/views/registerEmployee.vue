@@ -21,7 +21,7 @@
                   </div>
                     <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control pass m-auto" id="email" v-model="email">
+                    <input type="email" class="form-control pass m-auto" id="email" v-model="email" required>
                   </div>
           <button class="btn btn-primary my-5" type="submit">Submit application</button>
         </form>

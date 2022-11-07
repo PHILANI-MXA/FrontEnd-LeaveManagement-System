@@ -34,7 +34,7 @@
           </div>
            <div class="form-group">
             <label for="id">employee ID</label>
-            <input type="number" class="form-control pass m-auto" id="number" v-model="employee_id">
+            <input type="number" class="form-control pass m-auto" id="number" v-model="employee_id" required>
           </div>
           
           <button class="btn btn-primary my-5" type="submit">Submit application</button>
