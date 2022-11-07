@@ -9,8 +9,8 @@
         <div class="col-md-6 m-auto">
             <form class="container border border-black h-100" @submit.prevent="register">
                 <div class="form-group">
-                    <label for="firsName">firstName</label>
-                    <input type="text" class="form-control pass m-auto" id="firsName" v-model="firsName">
+                    <label for="firstName">firstName</label>
+                    <input type="text" class="form-control pass m-auto" id="firstName" v-model="firstName">
                   </div>
                   <div class="form-group">
                     <label for="lastName">lastName</label>
@@ -27,13 +27,37 @@
 </template>
 
 <script>
+import registerNewEmployee  from '@/views/registerEmployee.vue';
+
 export default {
-    name:'',
-    components: {
+  name: '',
+  components: {
+    registerNewEmployee
+    },
 
+    computed: {
+        employee() {
+        return this.$store.state.employee;
     }
-}
+    },
+    data() {
+    return {
+            firstName: '',
+            lastName: '',
+            email: ''
+        }
+  },
+    methods: {
+        register() {
+        this.$store.dispatch('register', {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email
+      });
+    }
+  }
 
+}
 </script>
 
 <style scoped>

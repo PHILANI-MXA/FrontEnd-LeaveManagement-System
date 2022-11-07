@@ -1,5 +1,6 @@
 import { createStore } from 'vuex';
 import createPersistedState from 'vuex-persistedstate';
+import router from '@/router';
 
 const appSystem = "https://leave-management-syste.herokuapp.com/"
 
@@ -46,6 +47,33 @@ export default createStore({
       fetch(appSystem + id)
         .then((response) => response.json())
         .then((LeaveRequest) => context.commit("setLeaveRequest", LeaveRequest));
+    },
+    
+
+    register: async (context, data) => {
+      const {
+        firstName,
+        lastName,
+        email,
+
+      } = data;
+      fetch(appSystem + "post/employee", {
+        method: "POST",
+        body: JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          email: email,         
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          context.commit("setEmployee", json)
+        });
+      router.push("/");
     },
   },
   modules: {
