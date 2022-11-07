@@ -1,6 +1,11 @@
 <template>
     <div class="min-vh-100 p-5 my-5" id="applications">
         <h3 class="text-center border border-black">Register new employee</h3><br><br><br>
+        <router-link to="/">
+            <button class="d-flex flex-end">
+            View employees
+            </button>
+          </router-link>
         <div class="col-md-6 m-auto">
             <form class="container border border-black h-100" @submit.prevent="register">
                 <div class="form-group">

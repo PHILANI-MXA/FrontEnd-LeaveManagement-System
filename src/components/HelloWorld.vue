@@ -1,49 +1,69 @@
 <template>
-  <div class="hello border border-secondary container p-3 my-5">
+  <div class="hello container p-3 my-5">
     <h3 class="text-center border border-black">Leave Management System</h3><br><br><br>
-    <div class="table-responsive">
-      <table class="table">
-      <caption>List of employees</caption>
+    <table class="table-responsive">
       <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">FirstName</th>
-          <th scope="col">LastName</th>
-          <th scope="col">Email</th>
-        </tr>
+          <tr>
+              <th class="col-md-3">#</th>
+              <th class="col-md-3">FirstName</th>
+              <th class="col-md-3">lastName</th>
+              <th class="col-md-3">email</th>
+          </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
+    <tbody>
+      <tr  v-for="employee in employees" :key="employee.employee_id">
+        <th scope="row">{{employee.employee_id}}</th>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.email}}</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
+  <div class="">
+    <router-link to="/registerNewEmployee">
+    <button class="d-flex flex-start">
+    RegisterNewEmployee
+    </button>
+  </router-link>
+      </div>
 </template>
 
 <script>
+import HelloWorld from '@/components/HelloWorld.vue'
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  name: '',
+  components: {
+    HelloWorld
+  },
+    data() {
+    return {
+      search:'',
+    }
+    },
+       employee() {
+      return this.$store.state.employees?.filter(employee =>{
+          let isMatch = true;
+          if (!users.firstName.toLowerCase().includes(this.search.toLowerCase())) {
+              isMatch = false;
+          }
+          return isMatch
+          })
+        },
+   computed:{
+        employees(){
+        return this.$store.state.employees;
+        },
+        employee(){
+        return this.$store.state.employee;
+        }
+    },
+  mounted() {
+    this.$store.dispatch('getEmployees');
+  },
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
