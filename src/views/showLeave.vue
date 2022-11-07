@@ -11,7 +11,7 @@
             </tr>
         </thead>
       <tbody>
-        <tr  v-for="leave in employees" :key="leave.employee_id">
+        <tr  v-for="leave in LeaveRequests" :key="leave.LeaveReq_no">
           <th scope="row">{{leave.employee_id}}</th>
           <td>{{leave.startDate}}</td>
           <td>{{leave.endDate}}</td>
@@ -46,12 +46,9 @@
         LeaveRequests(){
           return this.$store.state.LeaveRequests;
           },
-          LeaveRequest(){
-          return this.$store.state.LeaveRequest;
-          }
       },
     mounted() {
-      this.$store.dispatch('LeaveRequests');
+      this.$store.dispatch('getLeaveRequests');
     },
   }
   
