@@ -7,6 +7,9 @@
             </button>
           </router-link><br><br>
         <div class="col-md-6 m-auto">
+            <div class="form-wrapper" v-show="userMsg">
+                <p>{{userMsg}}</p>
+            </div>
             <form class="container border border-black h-100" @submit.prevent="register">
                 <div class="form-group">
                     <label for="firstName">firstName</label>
@@ -38,6 +41,9 @@ export default {
     computed: {
         employee() {
         return this.$store.state.employee;
+    },
+    userMsg(){
+        return this.$store.state.userMsg
     }
     },
     data() {

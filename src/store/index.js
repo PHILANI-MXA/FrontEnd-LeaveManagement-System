@@ -9,7 +9,8 @@ export default createStore({
     employees: null,
     LeaveRequests: null,
     employee: null,
-    LeaveRequest: null
+    LeaveRequest: null,
+    userMsg: null
   },
   getters: {
   },
@@ -25,7 +26,10 @@ export default createStore({
     },
     setLeaveRequest (state, value) {
       state.LeaveRequest = value;
-    }
+    },
+    setUserMsg (state, value) {
+      state.setUserMsg = value;
+    }, 
   },
   actions: {
     getEmployees: async (context) => {
@@ -43,8 +47,8 @@ export default createStore({
         .then((response) => response.json())
         .then((LeaveRequests) => context.commit("setLeaveRequests", LeaveRequests));
     },
-    getLeaveRequest: async (context, id) => {
-      fetch(appSystem + id)
+    getLeaveRequest: async (context) => {
+      fetch(appSystem + "post/application")
         .then((response) => response.json())
         .then((LeaveRequest) => context.commit("setLeaveRequest", LeaveRequest));
     },
@@ -71,12 +75,13 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
-          context.commit("setEmployee", json)
+          context.commit("setEmployee", json);
+          context.commit("setUserMsg", json.msg)
         });
       router.push("/");
     },
 
-    ApplyForLeave: async (context, data) => {
+    applyForLeave: async (context, data) => {
       const {
         startDate,
         endDate,
@@ -85,7 +90,7 @@ export default createStore({
         leaveTotal,
         employee_id
       } = data;
-      fetch(appSystem + ":id/application", {
+      fetch(appSystem + "post/application", {
         method: "POST",
         body: JSON.stringify({
           startDate: startDate,
@@ -93,7 +98,7 @@ export default createStore({
           leaveType: leaveType,
           Reason: Reason, 
           leaveTotal: leaveTotal,
-          employee_id: employee_id      
+          employee_id: employee_id    
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -102,7 +107,7 @@ export default createStore({
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
-          context.commit("LeaveRequest", json)
+          context.commit("setLeaveRequest", json)
         });
       router.push("/showLeaves");
     },
