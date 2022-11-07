@@ -5,7 +5,7 @@
             <button class="d-flex flex-end">
             View employees
             </button>
-          </router-link>
+          </router-link><br><br>
         <div class="col-md-6 m-auto">
             <form class="container border border-black h-100" @submit.prevent="register">
                 <div class="form-group">

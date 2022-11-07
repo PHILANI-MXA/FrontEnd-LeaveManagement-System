@@ -2,7 +2,7 @@
     <div class="min-vh-100 p-5 my-5" id="applications">
         <h3 class="text-center border border-black">Apply for Leave</h3><br><br><br>
         <div class="col-md-6 m-auto">
-            <form class="container border border-black h-100" @submit.prevent="apply">
+            <form class="container border border-black h-100" @submit.prevent="applyForLeave">
             <div class="form-group">
             <label for="date">startDate</label>
             <input type="date" class="form-control pass m-auto" id="date" v-model="startDate">
@@ -35,11 +35,44 @@
 </template>
 
 <script>
-export default {
-    name:'',
-    components: {
+import applyLeave  from '@/views/applyLeave.vue';
 
+
+
+export default {
+  name: '',
+  components: {
+    applyLeave
+    },
+
+    computed: {
+        employee() {
+        return this.$store.state.LeaveRequests;
     }
+    },
+    data() {
+    return {
+            startDate: '',
+            endDate: '',
+            leaveType:'',
+            Reason: '',
+            leaveTotal:'',
+            employee_id: '',
+        }
+  },
+    methods: {
+        register() {
+        this.$store.dispatch('applyForLeave', {
+            startDate: this.startDate,
+            endDate: this.endDate,
+            leaveType: this.leaveType,
+            Reason: this.Reason,
+            leaveTotal: this.leaveTotal,
+            employee_id: this.employee_id,
+      });
+    }
+  }
+
 }
 
 </script>

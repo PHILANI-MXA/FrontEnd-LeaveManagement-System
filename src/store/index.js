@@ -75,6 +75,37 @@ export default createStore({
         });
       router.push("/");
     },
+
+    ApplyForLeave: async (context, data) => {
+      const {
+        startDate,
+        endDate,
+        leaveType,
+        Reason,
+        leaveTotal,
+        employee_id
+      } = data;
+      fetch(appSystem + ":id/application", {
+        method: "POST",
+        body: JSON.stringify({
+          startDate: startDate,
+          endDate: endDate,
+          leaveType: leaveType,
+          Reason: Reason, 
+          leaveTotal: leaveTotal,
+          employee_id: employee_id      
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          context.commit("LeaveRequest", json)
+        });
+      router.push("/showLeaves");
+    },
   },
   modules: {
   },
