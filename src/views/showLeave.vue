@@ -4,13 +4,13 @@
       <table class="table-responsive m-auto">
         <thead>
             <tr>
-                <th class="col-md-3">ID</th>
-                <th class="col-md-3">Start-date</th>
-                <th class="col-md-3">End-date</th>
-                <th class="col-md-3">Leave type </th>
-                <th class="col-md-3">Reason </th>
-                <th class="col-md-3">LeaveTotal </th>
-                <th class="col-md-3">LeaveReq_no</th>
+                <th class="col">ID</th>
+                <th class="col">Start-date</th>
+                <th class="col">End-date</th>
+                <th class="col">Leave type </th>
+                <th class="col">Reason </th>
+                <th class="col">LeaveTotal </th>
+                <th class="col">LeaveReq_no</th>
             </tr>
         </thead>
       <tbody>
