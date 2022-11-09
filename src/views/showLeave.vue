@@ -7,9 +7,9 @@
                 <th class="col-md-3">ID</th>
                 <th class="col-md-3">Start-date</th>
                 <th class="col-md-3">End-date</th>
-                <th class="col-md-3">Leave type</th>
-                <th class="col-md-3">Reason</th>
-                <th class="col-md-3">LeaveTotal</th>
+                <th class="col-md-3">Leave type </th>
+                <th class="col-md-3">Reason </th>
+                <th class="col-md-3">LeaveTotal </th>
                 <th class="col-md-3">LeaveReq_no</th>
             </tr>
         </thead>
