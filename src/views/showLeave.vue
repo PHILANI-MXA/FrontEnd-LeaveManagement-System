@@ -1,7 +1,8 @@
 <template>
-    <div class="hello container p-3 my-5">
+    <div class="hello container-fluid p-5">
       <h3 class="text-center border border-black">Leave Management System</h3><br><br><br>
-      <table class="table-responsive m-auto">
+      <!-- <div>
+      <table class="table-stripped">
         <thead>
             <tr>
                 <th class="col">ID</th>
@@ -25,10 +26,38 @@
         </tr>
       </tbody>
     </table>
+  </div> -->
+  <div  class="table-responsive">
+    <table class="table  table-striped">
+      <thead>
+          <tr>
+            <th class="col">ID</th>
+            <th class="col">Start-date</th>
+            <th class="col">End-date</th>
+            <th class="col">Leave type </th>
+            <th class="col">Reason </th>
+            <th class="col">LeaveTotal </th>
+            <th class="col">LeaveReq_no</th>
+          </tr>
+      </thead>
+    <tbody>
+      <tr  v-for="leave in LeaveRequests" :key="leave.LeaveReq_no">
+        <th scope="row">{{leave.employee_id}}</th>
+        <td>{{leave.startDate}}</td>
+        <td>{{leave.endDate}}</td>
+        <td>{{leave.leaveType}}</td>
+        <td>{{leave.Reason}}</td>
+        <td>{{leave.leaveTotal}}</td>
+        <td>{{leave.LeaveReq_no}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
     </div>
+  
     <div class="">
       <router-link to="/applyForLeave">
-      <button class="d-flex flex-start">
+      <button class="">
       Leave application form
       </button>
     </router-link>
