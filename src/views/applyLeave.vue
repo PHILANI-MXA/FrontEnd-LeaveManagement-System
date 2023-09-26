@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import applyLeave  from '@/views/applyLeave.vue';
+import applyLeave from '@/views/applyLeave.vue';
 
 export default {
   name: '',

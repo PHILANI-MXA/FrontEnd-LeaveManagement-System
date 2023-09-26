@@ -66,7 +66,7 @@ export default createStore({
         body: JSON.stringify({
           firstName: firstName,
           lastName: lastName,
-          email: email,         
+          email: email,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
